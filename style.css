@@ -97,3 +97,13 @@ nav button:hover {
   background-repeat: no-repeat;
 }
 
+.hero-section , .hero-content {
+  width: 88%;
+  margin: 0 auto;
+}
+
+.hero-section , .hero-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
