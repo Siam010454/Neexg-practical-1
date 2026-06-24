@@ -84,7 +84,7 @@ nav button {
 
 nav button:hover {
   background-color: #e90b9c;
-  color: #fff;
+  color: #7c2424;
 }
 
 /* Hero section design */
@@ -106,4 +106,225 @@ nav button:hover {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.hero-section .hero-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-section .hero-content .hero-left-child h1 {
+    font-size: 47px;
+    font-weight: bold;
+    background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-section .hero-content .hero-left-child,
+.hero-section .hero-content .hero-right-child {
+    width: 50%;
+    height: auto;
+}
+
+.hero-section .hero-content .hero-left-child {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hero-section .hero-content .hero-right-child img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-section .hero-content .hero-left-child h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.hero-section .hero-content .hero-left-child .hero-cta-buttons button {
+    padding: 8px 24px;
+    border-radius: 16px;
+    border: none;
+    color: #eeeaed;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#hero-section .hero-content .hero-left-child .hero-cta-buttons button:nth-child(1) {
+    background-color: var(--primary-color);
+}
+
+#hero-section .hero-content .hero-left-child .hero-cta-buttons button:nth-child(2) {
+    background-color: #2C6DD6;
+}
+
+#hero-section .hero-content .hero-left-child .hero-cta-buttons button:hover {
+    background-color: var(--hover-primary);
+}
+
+#Funny-games {
+    max-width: 80%;
+    margin: 100px auto;
+}
+#Funny-games h2{
+    text-align: center;
+    font-size: 36px;
+}
+.title-half-style{
+    background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#Funny-games .funny-games-a{
+    text-align: center;
+    margin: 10px 0 0;
+}
+#Funny-games .game-carts{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+#Funny-games .game-carts .cart{
+    width: 23%;
+}
+#Funny-games .game-carts .cart img{
+    width: 100%;
+}
+#Funny-games .game-carts .cart p{
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/*Hover effect */
+
+.video-div{
+    position: relative;
+    overflow: hidden;
+}
+.video-div .hidden-div{
+    position: absolute;
+    top: 10000px;
+    left: 0;
+    background: #3b3939a6;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+.video-div:hover .hidden-div{
+    top: 0;
+}
+.video-div .hidden-div .click-and-watch{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+.video-div .circle-play-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 16px;
+  }
+  
+  .video-div .circle-play-button i {
+    color: #000;
+  }
+  .video-div p {
+    color: #F948B2;
+    text-align: center;
+  }
+
+  /*Instant game section design*/
+
+  
+  #instant-game{
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#instant-game .instant-game-content{
+    width: 45%;
+}
+#instant-game .instant-game-content h2{
+    font-size: 36px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+#instant-game .instant-game-content p{
+    text-align: right;
+    width: 70%;
+    margin: 0 0 0 30%;
+    line-height: 1.5rem;
+}
+#instant-game .instant-game-pic{
+    width: 40%;
+}
+#instant-game .instant-game-pic .instant-main-pic{
+    width: 100%;
+}
+#instant-game .instant-game-pic .instant-secondery-pic{
+    width: 40%;
+    position: relative;
+    top: -140px;
+    left: -60px;
+}
+
+/* All tags design */
+#tags{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 100px;
+    background: #f5efef;
+}
+#tags .all-tags{
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+#tags .all-tags li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    font-size: 14px;
+}
+#tags .all-tags li{
+    padding: 7px 10px;
+    transition: 0.5s;
+    background: #ffffff;
+    border-radius: 50px;
+}
+#tags .all-tags li:hover{
+    border: 1px solid #FF42A5;
+}
+#tags .all-tags li:hover a{
+    color: #F948B2;
+}
+#tags .all-tags li a img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
