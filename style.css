@@ -1,3 +1,4 @@
+/* --- Global Reset & Variables --- */
 * {
   margin: 0;
   padding: 0;
@@ -6,45 +7,46 @@
   --secondary-color: #737373;
 } 
 
-body  {
-
-    font-family: 'Poppins', sans-serif;
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling on mobile */
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Container --- */
 .container {
-  width:70%;
-  max-width: 1280px;
+  width: 90%; /* Increased for better breathing room on small screens */
+  max-width: 1200px;
   margin: 0 auto;
-  
 }
-/*menu or navigation bar section design?*/
 
+/* --- Navigation --- */
 nav {
   display: flex;
   justify-content: space-between;
-align-items: center;
+  align-items: center;
   padding: 20px 0;
-
 }
 
 .logo {
   display: flex;
-align-items: center;
+  align-items: center;
   font-size: 28px;
   font-weight: bold;
-  
 }
-
 
 .logo img {
   width: 60px;
   height: 30px;
   margin-right: 10px;
-  margin-top: -5px;
 }
 
 .logo span {
@@ -65,7 +67,7 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: #000;
-  font-size:16px;
+  font-size: 16px;
   transition: color 0.3s;
 }
 
@@ -75,256 +77,415 @@ nav ul li a:hover {
 
 nav button {
   padding: 9px 19px;
-  background-color:#cacaca;
+  background-color: #cacaca;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: 0.3s;
+  white-space: nowrap;
+}
+
+nav button i {
+  margin-left: 5px;
 }
 
 nav button:hover {
   background-color: #e90b9c;
-  color: #7c2424;
+  color: #fff;
 }
 
-/* Hero section design */
+/* --- Hero Section --- */
 .hero-section {
- width: 81%;
-  margin: 0 auto;
+  width: 100%;
+  padding: 60px 0;
   background-image: url('./images/bannerBG.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.hero-section , .hero-content {
-  width: 88%;
+.hero-content {
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-.hero-section , .hero-content {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.hero-left-child,
+.hero-right-child {
+  width: 50%;
+}
+
+.hero-left-child {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero-left-child h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.hero-left-child h1 {
+  font-size: 56px;
+  font-weight: bold;
+  background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-left-child ul {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
-.hero-section .hero-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.hero-left-child ul li i {
+  margin-right: 8px;
+  color: var(--primary-color);
 }
 
-.hero-section .hero-content .hero-left-child h1 {
-    font-size: 47px;
-    font-weight: bold;
-    background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.hero-cta-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.hero-section .hero-content .hero-left-child,
-.hero-section .hero-content .hero-right-child {
-    width: 50%;
-    height: auto;
+/* Fixed your IDs (#) to Classes (.) to match your HTML structure */
+.hero-left-child .hero-cta-buttons button {
+  padding: 12px 28px;
+  border-radius: 16px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.hero-section .hero-content .hero-left-child {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+.hero-left-child .hero-cta-buttons button:nth-child(1) {
+  background-color: var(--primary-color);
 }
 
-.hero-section .hero-content .hero-right-child img {
-    width: 100%;
-    height: auto;
+.hero-left-child .hero-cta-buttons button:nth-child(2) {
+  background-color: #2C6DD6;
 }
 
-.hero-section .hero-content .hero-left-child h2 {
-    text-transform: uppercase;
-    font-weight: bold;
+.hero-left-child .hero-cta-buttons button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
-.hero-section .hero-content .hero-left-child .hero-cta-buttons button {
-    padding: 8px 24px;
-    border-radius: 16px;
-    border: none;
-    color: #eeeaed;
-    transition: 0.3s;
-    cursor: pointer;
+.hero-right-child img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-#hero-section .hero-content .hero-left-child .hero-cta-buttons button:nth-child(1) {
-    background-color: var(--primary-color);
-}
-
-#hero-section .hero-content .hero-left-child .hero-cta-buttons button:nth-child(2) {
-    background-color: #2C6DD6;
-}
-
-#hero-section .hero-content .hero-left-child .hero-cta-buttons button:hover {
-    background-color: var(--hover-primary);
-}
-
+/* --- Funny Games Section --- */
 #Funny-games {
-    max-width: 80%;
-    margin: 100px auto;
-}
-#Funny-games h2{
-    text-align: center;
-    font-size: 36px;
-}
-.title-half-style{
-    background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-#Funny-games .funny-games-a{
-    text-align: center;
-    margin: 10px 0 0;
-}
-#Funny-games .game-carts{
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-}
-#Funny-games .game-carts .cart{
-    width: 23%;
-}
-#Funny-games .game-carts .cart img{
-    width: 100%;
-}
-#Funny-games .game-carts .cart p{
-    font-size: 14px;
-    margin-top: 8px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 80px auto;
 }
 
-/*Hover effect */
+#Funny-games h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 
-.video-div{
-    position: relative;
-    overflow: hidden;
+.title-half-style {
+  background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.video-div .hidden-div{
-    position: absolute;
-    top: 10000px;
-    left: 0;
-    background: #3b3939a6;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    transition: 0.4s;
+
+#Funny-games .funny-games-a {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
 }
-.video-div:hover .hidden-div{
-    top: 0;
+
+/* Changed layout to Flexbox with wrapping for responsiveness */
+#Funny-games .game-carts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }
-.video-div .hidden-div .click-and-watch{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    cursor: pointer;
+
+#Funny-games .game-carts .cart {
+  width: calc(25% - 15px); /* 4 items per row on desktop */
+  min-width: 220px;
 }
+
+#Funny-games .game-carts .cart p {
+  font-size: 14px;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+/* --- Hover Effect / Video Div --- */
+.video-div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.video-div img {
+  width: 100%;
+  display: block;
+}
+
+.video-div .hidden-div {
+  position: absolute;
+  top: 100%; /* Keeps it hidden just off-screen */
+  left: 0;
+  background: rgba(59, 57, 57, 0.75);
+  width: 100%;
+  height: 100%;
+  transition: 0.4s ease;
+}
+
+.video-div:hover .hidden-div {
+  top: 0;
+}
+
+.video-div .hidden-div .click-and-watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
 .video-div .circle-play-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-left: 16px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-div .circle-play-button i {
+  color: #000;
+}
+
+.video-div p {
+  color: #F948B2;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* --- Instant Game Section --- */
+#instant-game {
+  max-width: 1200px;
+  width: 90%;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+#instant-game .instant-game-content {
+  width: 50%;
+}
+
+#instant-game .instant-game-content h2 {
+  font-size: 36px;
+  text-align: left; /* Changed to left for better standard reading structure */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+#instant-game .instant-game-content p {
+  text-align: left;
+  line-height: 1.6;
+  color: var(--secondary-color);
+}
+
+#instant-game .instant-game-pic {
+  width: 45%;
+  position: relative;
+}
+
+#instant-game .instant-game-pic .main-pic {
+  width: 80%;
+  display: block;
+}
+
+#instant-game .instant-game-pic .secondery-pic {
+  width: 45%;
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+  border: 4px solid #fff;
+  border-radius: 8px;
+}
+
+/* --- Tags/Categories Design --- */
+#tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  background: #f5efef;
+}
+
+#tags .all-tags {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+#tags .all-tags li {
+  transition: 0.3s;
+  background: #ffffff;
+  border-radius: 50px;
+  border: 1px solid transparent;
+}
+
+#tags .all-tags li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #000;
+  font-size: 14px;
+}
+
+#tags .all-tags li:hover {
+  border: 1px solid #FF42A5;
+  transform: translateY(-2px);
+}
+
+#tags .all-tags li:hover a {
+  color: #F948B2;
+}
+
+#tags .all-tags li a img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+
+/* ==========================================================================
+   MEDIA QUERIES (The responsiveness magic)
+   ========================================================================== */
+
+/* --- TABLETS & SMALL LAPTOPS (Under 992px) --- */
+@media (max-width: 1024px) {
+  .hero-left-child h1 {
+    font-size: 42px;
   }
   
-  .video-div .circle-play-button i {
-    color: #000;
+  #Funny-games .game-carts .cart {
+    width: calc(50% - 10px); /* Drops to 2 items per row */
   }
-  .video-div p {
-    color: #F948B2;
+
+  #instant-game .instant-game-content h2 {
+    font-size: 30px;
+  }
+}
+
+/* --- PHONES & SMALL TABLETS (Under 768px) --- */
+@media (max-width: 768px) {
+  /* Nav layout stack */
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+   .hero-left-child h2 {
+    color: green;
+  }
+  
+  nav .nav-menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Hero stack layout */
+  .hero-content {
+    flex-direction: column-reverse; /* Puts image on top on mobile */
     text-align: center;
   }
 
-  /*Instant game section design*/
-
-  
-  #instant-game{
-    max-width: 80%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#instant-game .instant-game-content{
-    width: 45%;
-}
-#instant-game .instant-game-content h2{
-    font-size: 36px;
-    text-align: right;
-    margin-bottom: 20px;
-}
-#instant-game .instant-game-content p{
-    text-align: right;
-    width: 70%;
-    margin: 0 0 0 30%;
-    line-height: 1.5rem;
-}
-#instant-game .instant-game-pic{
-    width: 40%;
-}
-#instant-game .instant-game-pic .instant-main-pic{
+  .hero-left-child, 
+  .hero-right-child {
     width: 100%;
-}
-#instant-game .instant-game-pic .instant-secondery-pic{
-    width: 40%;
-    position: relative;
-    top: -140px;
-    left: -60px;
+  }
+
+  .hero-left-child ul {
+    align-items: center;
+  }
+
+  .hero-cta-buttons {
+    justify-content: center;
+  }
+
+  /* Instant game stack layout */
+  #instant-game {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+
+  #instant-game .instant-game-content {
+    width: 100%;
+  }
+
+  #instant-game .instant-game-content h2 {
+    text-align: center;
+  }
+
+  #instant-game .instant-game-content p {
+    text-align: center;
+  }
+
+  #instant-game .instant-game-pic {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
-/* All tags design */
-#tags{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 0 100px;
-    background: #f5efef;
-}
-#tags .all-tags{
-    max-width: 80%;
-    margin: 0 auto;
-    display: flex;
+/* --- MOBILE DEVICES (Under 480px) --- */
+@media (max-width: 480px) {
+  nav ul {
     flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
     justify-content: center;
-    list-style: none;
-    gap: 30px;
-}
-#tags .all-tags li a{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-weight: 700;
-    color: #000;
-    font-size: 14px;
-}
-#tags .all-tags li{
-    padding: 7px 10px;
-    transition: 0.5s;
-    background: #ffffff;
-    border-radius: 50px;
-}
-#tags .all-tags li:hover{
-    border: 1px solid #FF42A5;
-}
-#tags .all-tags li:hover a{
-    color: #F948B2;
-}
-#tags .all-tags li a img{
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+  }
+
+  .hero-left-child h1 {
+    font-size: 34px;
+  }
+ 
+
+  #Funny-games h2,
+  #instant-game .instant-game-content h2 {
+    font-size: 26px;
+  }
+
+  #Funny-games .game-carts .cart {
+    width: 100%; /* 1 item per row on small phones */
+  }
 }
